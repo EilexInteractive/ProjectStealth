@@ -10,11 +10,12 @@ namespace EilexFramework
     {
         protected string _SpritePath;
         protected Texture2D _Texture;
-        public Color Tint;
+        public Color Tint = Color.WHITE;
 
-        public Sprite(string spritePath) : base("Sprite")
+
+        public Sprite(ResourceManager resManager, string spritePath) : base(resManager, "Sprite")
         {
-            _Texture = LoadTexture(spritePath);
+            _Texture = _OwningResManager.LoadTexture(spritePath);
         }
 
         public void ChangeSprite(string spritePath) => _Texture = LoadTexture(spritePath);

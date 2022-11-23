@@ -52,7 +52,7 @@ namespace EilexFramework
             TextureDetails newTexture = new TextureDetails
             {
                 TexturePath = filePath,
-                Texture = LoadTexture(filePath)
+                Texture = Raylib.LoadTexture(filePath)
             };
 
             // Add the loaded texture

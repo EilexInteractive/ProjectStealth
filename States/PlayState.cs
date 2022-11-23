@@ -14,10 +14,13 @@ namespace EilexGame
         public override void Draw()
         {
             base.Draw();
+
         }
         public override void OnEnter()
         {
-            Sprite sprite = new Sprite("TestImage.png");
+            Sprite sprite = new Sprite(ResManager, "TestImage.png");
+            sprite.Scale = 0.2f;
+            sprite.Rotation = 45.0f;
             ResManager.AddObjectToScene(sprite);
         }
 
