@@ -17,7 +17,8 @@ namespace EilexGame
         }
         public override void OnEnter()
         {
-            Console.WriteLine("Hello World Please Enter");
+            Sprite sprite = new Sprite("TestImage.png");
+            ResManager.AddObjectToScene(sprite);
         }
 
         public override void OnExit()
