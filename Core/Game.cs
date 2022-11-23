@@ -36,6 +36,7 @@ namespace EilexFramework
 
             GameObject go = new GameObject("HelloWorld");
             
+            
             while(IsRunning)
             {
 
@@ -43,7 +44,7 @@ namespace EilexFramework
 
                 BeginDrawing();
                 ClearBackground(Color.RAYWHITE);
-                DrawText("Hello World", 100, 100, 24, Color.BLACK);
+                go.Draw();
                 EndDrawing();
             }
         }
