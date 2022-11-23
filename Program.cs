@@ -1,6 +1,7 @@
 ﻿using System;
 using Raylib_cs;
 using static Raylib_cs.Raylib;
+using EilexFramework;
 
 namespace ProjectStealth
 {
@@ -8,16 +9,13 @@ namespace ProjectStealth
     {
         public static void Main()
         {
-            int windowWidth = 1200;
-            int windowHeight = 800;
-
-            InitWindow(windowWidth, windowHeight, "Hello World");
+            Game.CreateWindow(1200, 800, "Eilex Game");
 
             while(!WindowShouldClose())
             {
                 BeginDrawing();
                 ClearBackground(Color.RAYWHITE);
-                DrawText("Hello World", windowWidth / 2, windowHeight / 2, 24, Color.BLACK);
+                
                 EndDrawing();
             }
         }
