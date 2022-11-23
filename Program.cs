@@ -11,7 +11,7 @@ namespace ProjectStealth
         {
             Game.CreateWindow(1200, 800, "Eilex Game");
 
-            while(!WindowShouldClose())
+            while(!WindowShouldClose() || Game.IsRunning)
             {
                 BeginDrawing();
                 ClearBackground(Color.RAYWHITE);
