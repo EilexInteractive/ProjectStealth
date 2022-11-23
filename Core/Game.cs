@@ -1,6 +1,7 @@
 using System;
 using Raylib_cs;
 using static Raylib_cs.Raylib;
+using EilexGame;
 
 namespace EilexFramework
 {
@@ -33,8 +34,12 @@ namespace EilexFramework
         {
             float dt = GetFrameTime();              // Get delta time
 
+            GameObject go = new GameObject("HelloWorld");
+            
             while(IsRunning)
             {
+
+                go.Update(dt);
 
                 BeginDrawing();
                 ClearBackground(Color.RAYWHITE);

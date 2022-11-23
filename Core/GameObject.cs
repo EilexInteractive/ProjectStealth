@@ -89,19 +89,23 @@ namespace EilexGame
                 return;
         }
 
-        public void Update(float dt)
+        public virtual void Update(float dt)
+        {
+            if(!IsActive)
+                return;
+
+            UpdatePosition();
+
+            Console.WriteLine(ObjectName);
+        }
+
+        public virtual void Draw()
         {
             if(!IsActive)
                 return;
         }
 
-        public void Draw()
-        {
-            if(!IsActive)
-                return;
-        }
-
-        public void Destroy()
+        public virtual void Destroy()
         {
 
         }
@@ -110,6 +114,16 @@ namespace EilexGame
 
         #region Transform
 
+        private void UpdatePosition()
+        {
+            if(_Parent != null)
+            {
+                GlobalPosition = _Parent.GlobalPosition + this.LocalPosition;
+            } else 
+            {
+                GlobalPosition = LocalPosition;
+            }
+        }
 
         #endregion
     }
