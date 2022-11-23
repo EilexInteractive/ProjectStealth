@@ -2,6 +2,7 @@ using System;
 using Raylib_cs;
 using static Raylib_cs.Raylib;
 using EilexFramework.GameStates;
+using EilexGame;
 
 namespace EilexFramework
 {
@@ -15,7 +16,7 @@ namespace EilexFramework
         public static bool IsRunning = true;                                // If the game is running
 
         // Game States
-        private static GameState _ActiveState;
+        private static GameState _ActiveState = new PlayState();
 
         
         public static void CreateWindow(int windowWidth, int windowHeight, string title, bool fullscreen = false)
@@ -26,8 +27,11 @@ namespace EilexFramework
             WindowTitle = title;
             FullScreen = fullscreen;
 
+
             // Create the window with the update properties
             InitWindow(WindowWidth, WindowHeight, WindowTitle);
+
+           
 
 
 
@@ -36,6 +40,8 @@ namespace EilexFramework
             {
                 ToggleFullscreen();
             }
+
+             _ActiveState.OnEnter();
         }
 
         public static void Update()
