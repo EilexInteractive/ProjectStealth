@@ -89,7 +89,7 @@ namespace EilexGame
                 return;
         }
 
-        public virtual void Update(float dt)
+            public virtual void Update(float dt)
         {
             if(!IsActive)
                 return;
@@ -103,6 +103,8 @@ namespace EilexGame
         {
             if(!IsActive)
                 return;
+
+            DrawText("Hello World", (int)GlobalPosition.X, (int)GlobalPosition.Y, 24, Color.BLACK);
         }
 
         public virtual void Destroy()
@@ -125,6 +127,8 @@ namespace EilexGame
             }
         }
 
+        public void SetPosition(Vector2 pos) => LocalPosition = pos;
+        public void SetPosition(float x, float y) => LocalPosition = new Vector2(x, y);
         #endregion
     }
 }
