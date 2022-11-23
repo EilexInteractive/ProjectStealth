@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace EilexEngine
+namespace EilexFramework
 {
     public class Vector2
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EilexEngine
+namespace EilexFramework
 {
     public static class MathF
     {
