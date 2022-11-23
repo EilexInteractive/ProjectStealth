@@ -95,8 +95,6 @@ namespace EilexFramework
                 return;
 
             UpdatePosition();
-
-            Console.WriteLine(ObjectName);
         }
 
         public virtual void Draw()
