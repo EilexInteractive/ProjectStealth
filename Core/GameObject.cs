@@ -41,15 +41,17 @@ namespace EilexFramework
         #region Misc Properties
 
         public bool IsActive = true;
+        protected ResourceManager _OwningResManager;
 
         #endregion
 
         #region Constructors
 
-        public GameObject(string objectName = "GameObject")
+        public GameObject(ResourceManager res, string objectName = "GameObject")
         {
             ObjectName = objectName;
             _ObjectID = Globals.GenerateID();
+            _OwningResManager = res;
         }
 
         #endregion
@@ -101,8 +103,6 @@ namespace EilexFramework
         {
             if(!IsActive)
                 return;
-
-            DrawText("Hello World", (int)GlobalPosition.X, (int)GlobalPosition.Y, 24, Color.BLACK);
         }
 
         public virtual void Destroy()
