@@ -20,6 +20,9 @@ namespace EilexGame
         public Vector2 LocalPosition = new Vector2();
         public Vector2 GlobalPosition = new Vector2();
 
+        public float Scale = 1;
+        public float Rotation = 0;
+
         #endregion
 
         public List<string> Tags = new List<string>(); 
