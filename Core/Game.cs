@@ -1,7 +1,7 @@
 using System;
 using Raylib_cs;
 using static Raylib_cs.Raylib;
-using EilexGame;
+using EilexFramework.GameStates;
 
 namespace EilexFramework
 {
@@ -14,16 +14,24 @@ namespace EilexFramework
         public static bool FullScreen = false;                               // If full screen mode or not
         public static bool IsRunning = true;                                // If the game is running
 
+        // Game States
+        private static GameState _ActiveState;
+
         
         public static void CreateWindow(int windowWidth, int windowHeight, string title, bool fullscreen = false)
         {
+            // Setup window properties
             WindowWidth = windowWidth;
             WindowHeight = windowHeight;
             WindowTitle = title;
             FullScreen = fullscreen;
 
+            // Create the window with the update properties
             InitWindow(WindowWidth, WindowHeight, WindowTitle);
 
+
+
+            // Toggle fullscren if needed
             if(FullScreen)
             {
                 ToggleFullscreen();
@@ -37,14 +45,38 @@ namespace EilexFramework
             while(IsRunning)
             {
 
-
+                if(_ActiveState != null)
+                {
+                    _ActiveState.Update(dt);
+                } else 
+                {
+                    IsRunning = false;
+                }
 
                 BeginDrawing();
                 ClearBackground(Color.RAYWHITE);
+                if(_ActiveState != null)
+                {
+                    _ActiveState.Draw();
+                } else 
+                {
+                    IsRunning = false;
+                }
                 EndDrawing();
             }
         }
 
+        public static void SetGameState(GameState state)
+        {
+            if(state != null)
+            {
+                if(_ActiveState != null)
+                    _ActiveState.OnExit();
+
+                _ActiveState = state;
+                _ActiveState.OnEnter();
+            }
+        }
 
     }
 }
