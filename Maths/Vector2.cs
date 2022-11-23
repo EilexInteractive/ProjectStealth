@@ -131,7 +131,8 @@ namespace EilexFramework
 
         public float Magintude()
         {
-            return MathF.Sqrt((X * X) + (Y * Y));
+            
+            return System.MathF.Sqrt((X * X) + (Y * Y));
         }
 
         public void Normalize()
