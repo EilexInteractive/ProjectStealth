@@ -33,18 +33,14 @@ namespace EilexFramework
         public static void Update()
         {
             float dt = GetFrameTime();              // Get delta time
-
-            GameObject go = new GameObject("HelloWorld");
-            
             
             while(IsRunning)
             {
 
-                go.Update(dt);
+
 
                 BeginDrawing();
                 ClearBackground(Color.RAYWHITE);
-                go.Draw();
                 EndDrawing();
             }
         }
