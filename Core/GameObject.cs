@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Raylib_cs;
 using static Raylib_cs.Raylib;
+using EilexFramework;
 
 namespace EilexGame
 {
@@ -14,6 +15,7 @@ namespace EilexGame
 
         #endregion
 
+
         public List<string> Tags = new List<string>(); 
         #region Object Hierarchy
         // Parent Reference
@@ -24,6 +26,22 @@ namespace EilexGame
         protected List<GameObject> _Children = new List<GameObject>();
         public List<GameObject> Children { get => _Children; }
 
+
+        #endregion
+
+        #region Misc Properties
+
+        public bool IsActive = true;
+
+        #endregion
+
+        #region Constructors
+
+        public GameObject(string objectName = "GameObject")
+        {
+            ObjectName = objectName;
+            _ObjectID = Globals.GenerateID();
+        }
 
         #endregion
 
@@ -58,13 +76,31 @@ namespace EilexGame
 
         public virtual void Start()
         {
-
+            if(!IsActive)
+                return;
         }
 
-        public void Update()
+        public void Update(float dt)
         {
-            
+            if(!IsActive)
+                return;
         }
+
+        public void Draw()
+        {
+            if(!IsActive)
+                return;
+        }
+
+        public void Destroy()
+        {
+
+        }
+
+        #endregion
+
+        #region Transform
+
 
         #endregion
     }
