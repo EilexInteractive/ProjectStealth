@@ -25,7 +25,7 @@ namespace EilexGame
             Console.WriteLine("Hello World Exit");
         }
 
-        public override string? ToString()
+        public override string ToString()
         {
             return _StateName;
         }
