@@ -69,7 +69,13 @@ namespace EilexFramework
                     IsRunning = false;
                 }
                 EndDrawing();
+
+                // Debug close game btn
+                if(IsKeyPressed(KeyboardKey.KEY_ESCAPE))
+                    IsRunning = false;
             }
+
+            
         }
 
         public static void SetGameState(GameState state)
