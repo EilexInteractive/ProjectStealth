@@ -29,6 +29,20 @@ namespace EilexFramework
             }
         }
 
+        public static void Update()
+        {
+            float dt = GetFrameTime();              // Get delta time
+
+            while(IsRunning)
+            {
+
+                BeginDrawing();
+                ClearBackground(Color.RAYWHITE);
+                DrawText("Hello World", 100, 100, 24, Color.BLACK);
+                EndDrawing();
+            }
+        }
+
 
     }
 }

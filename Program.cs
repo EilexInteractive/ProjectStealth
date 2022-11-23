@@ -9,15 +9,13 @@ namespace ProjectStealth
     {
         public static void Main()
         {
-            Game.CreateWindow(1200, 800, "Eilex Game");
+            Game.CreateWindow(1200, 800, "Eilex Game");             // Create the window
 
-            while(!WindowShouldClose() || Game.IsRunning)
-            {
-                BeginDrawing();
-                ClearBackground(Color.RAYWHITE);
-                
-                EndDrawing();
-            }
+            Game.Update();
+
+        
+
+            CloseWindow();
         }
     }
 }
