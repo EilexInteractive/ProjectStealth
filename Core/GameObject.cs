@@ -15,6 +15,12 @@ namespace EilexGame
 
         #endregion
 
+        #region Transform
+
+        public Vector2 LocalPosition = new Vector2();
+        public Vector2 GlobalPosition = new Vector2();
+
+        #endregion
 
         public List<string> Tags = new List<string>(); 
         #region Object Hierarchy
